@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Climate Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .sidebar {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Climate Sentiment Analysis</h1>
+
+    <!-- Sidebar for navigation -->
+    <div class="sidebar">
+        <h3>Navigation</h3>
+        <a href="{{ url_for('sentiment_analysis') }}">Sentiment Analysis</a>
+        <a href="{{ url_for('keyword_frequency') }}">Keyword Frequency</a>
+        <a href="{{ url_for('future_prediction') }}">Future Prediction</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+</body>
+</html>
+ 

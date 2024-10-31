@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center elements horizontally */
+        }
+        
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        .container {
+            max-width: 600px; /* Set max width for the container */
+            width: 100%; /* Make container take full width */
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%; /* Full width of the container */
+            max-width: 400px; /* Set a max width for the forms */
+        }
+
+        select, button, textarea, input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Additional styling for sidebar navigation */
+        .sidebar {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            max-width: 400px; /* Set a max width for the sidebar */
+            width: 100%; /* Full width of the container */
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack links vertically */
+            align-items: center; /* Center links horizontally */
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            width: 100%; /* Full width of the sidebar */
+            text-align: center; /* Center align text within links */
+        }
+
+        .sidebar a:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Heading and Navbar -->
+    <header class="main-header">
+        <h1>Welcome to Climate Sentiment Analysis</h1>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('sentiment_analysis') }}">Sentiment Analysis</a>
+            <a href="{{ url_for('keyword_frequency') }}">Keyword Frequency</a>
+            <a href="{{ url_for('future_prediction') }}">Future Prediction</a>
+        </nav>
+    </header>
+
+    
+    <!-- Main Content -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

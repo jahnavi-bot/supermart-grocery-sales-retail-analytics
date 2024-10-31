@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results - Climate Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .result-box {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .result-box h3 {
+            margin: 0 0 10px;
+        }
+
+        .result-box p {
+            margin: 5px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+
+    <div class="result-box">
+        <h3>Timeframe Analyzed:</h3>
+        <p>{{ timeframe }}</p>
+        <h3>Average Sentiment:</h3>
+        <p>{{ avg_sentiment if avg_sentiment is not none else 'No data available' }}</p>
+        {% if filename %}
+            <h3>Sentiment Analysis Graph:</h3>
+            <img src="{{ url_for('static', filename=filename) }}" alt="Sentiment Analysis Graph">
+        {% endif %}
+    </div>
+
+    <div class="result-box">
+        <h3>Keyword Frequency:</h3>
+        {% if filename %}
+            <img src="{{ url_for('static', filename=filename) }}" alt="Keyword Frequency Graph">
+        {% endif %}
+    </div>
+
+    <a href="{{ url_for('index') }}">Go Back to Home</a>
+</body>
+</html>
