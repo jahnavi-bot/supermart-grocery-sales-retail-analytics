@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualize by Year</title>
+</head>
+<body>
+    <h1>Visualize Sales Data by Year</h1>
+
+    <form method="POST">
+        <label for="year">Select Year:</label>
+        <select name="year" id="year" required>
+            <option value="">--Select Year--</option>
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="chart_type">Select Chart Type:</label>
+        <select name="chart_type" id="chart_type">
+            <option value="bar">Bar Chart</option>
+            <option value="pie">Pie Chart</option>
+        </select>
+
+        <button type="submit">Visualize</button>
+    </form>
+</body>
+</html>
